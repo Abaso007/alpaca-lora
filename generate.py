@@ -109,7 +109,7 @@ def main(
             )
         s = generation_output.sequences[0]
         output = tokenizer.decode(s)
-        return output.split("### Response:")[1].strip()
+        return output.split("### Body:")[1].strip()
 
     gr.Interface(
         fn=evaluate,
