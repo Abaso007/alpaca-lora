@@ -192,7 +192,7 @@ def train(
 
 def generate_prompt(data_point):
     # sorry about the formatting disaster gotta move fast
-    return f"""Below is a title of a story. Write a story that appropriately fits the title.
+    return f"""Below is a title of a story from nsfw reddit posts. Your task is to write a story that fits the title
 
 ### Title:
 {data_point["instruction"]}

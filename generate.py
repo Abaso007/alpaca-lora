@@ -89,7 +89,7 @@ def main(
         max_new_tokens=128,
         **kwargs,
     ):
-        prompt = generate_prompt(instruction, input)
+        prompt = generate_prompt(instruction)
         inputs = tokenizer(prompt, return_tensors="pt")
         input_ids = inputs["input_ids"].to(device)
         generation_config = GenerationConfig(
@@ -141,7 +141,7 @@ def main(
 
 
 def generate_prompt(instruction):
-    return f"""Below is a title of a story. Write a story that appropriately fits the title.
+    return f"""Below is a title of a story from nsfw reddit posts. Your task is to write a story that fits the title
 
 ### Title:
 {instruction}
