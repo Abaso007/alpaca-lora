@@ -26,11 +26,11 @@ except:
 def main(
     load_8bit: bool = False,
     base_model: str = "",
-    lora_weights: str = "tloen/alpaca-lora-7b",
+    lora_weights: str = "lora",
 ):
-    assert base_model, (
-        "Please specify a --base_model, e.g. --base_model='decapoda-research/llama-7b-hf'"
-    )
+    assert (
+        base_model
+    ), "Please specify a --base_model, e.g. --base_model='decapoda-research/llama-7b-hf'"
 
     tokenizer = LlamaTokenizer.from_pretrained(base_model)
     if device == "cuda":
@@ -139,26 +139,8 @@ def main(
     ).launch(share=True)
     # Old testing code follows.
 
-    """
-    # testing code for readme
-    for instruction in [
-        "Tell me about alpacas.",
-        "Tell me about the president of Mexico in 2019.",
-        "Tell me about the king of France in 2019.",
-        "List all Canadian provinces in alphabetical order.",
-        "Write a Python program that prints the first 10 Fibonacci numbers.",
-        "Write a program that prints the numbers from 1 to 100. But for multiples of three print 'Fizz' instead of the number and for the multiples of five print 'Buzz'. For numbers which are multiples of both three and five print 'FizzBuzz'.",
-        "Tell me five words that rhyme with 'shock'.",
-        "Translate the sentence 'I have no mouth but I must scream' into Spanish.",
-        "Count up from 1 to 500.",
-    ]:
-        print("Instruction:", instruction)
-        print("Response:", evaluate(instruction))
-        print()
-    """
 
-
-def generate_prompt(instruction, input=None):
+def generate_prompt(instruction):
     return f"""Below is a title of a story. Write a story that appropriately fits the title.
 
 ### Title:

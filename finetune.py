@@ -24,8 +24,8 @@ from peft import (
 def train(
     # model/data params
     base_model: str = "",  # the only required argument
-    data_path: str = "./alpaca_data_cleaned.json",
-    output_dir: str = "./lora-alpaca",
+    data_path: str = "./data.jsonl",
+    output_dir: str = "./lora",
     # training hyperparams
     batch_size: int = 128,
     micro_batch_size: int = 4,
