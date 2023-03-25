@@ -159,7 +159,7 @@ def main(
 
 
 def generate_prompt(instruction, input=None):
-    return f"""Below is an instruction that describes a task. Write a response that appropriately completes the request.
+    return f"""Below is a title of a story. Write a story that appropriately fits the title.
 
 ### Title:
 {instruction}
