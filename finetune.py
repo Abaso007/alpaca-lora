@@ -30,7 +30,7 @@ def train(
     batch_size: int = 128,
     micro_batch_size: int = 4,
     num_epochs: int = 3,
-    learning_rate: float = 3e-4,
+    learning_rate: float = 2e-5,
     cutoff_len: int = 1024,
     val_set_size: int = 2000,
     # lora hyperparams
@@ -43,7 +43,7 @@ def train(
     ],
     # llm hyperparams
     train_on_inputs: bool = True,  # if False, masks out inputs in loss
-    group_by_length: bool = True,  # faster, but produces an odd training loss curve
+    group_by_length: bool = False,  # faster, but produces an odd training loss curve
 ):
     print(
         f"Training Alpaca-LoRA model with params:\n"
